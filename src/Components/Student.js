@@ -26,12 +26,13 @@ let Student = () => {
 
     let ongetData  = () =>{
         let std = {
-            Name:kame,
-            Batch:katch,
-            Rollnumber:mole,
-            clas:lass
+            name:kame,
+            batch:katch,
+            roll:mole,
+            class:lass
         }
-        console.log(std)
+        
+        setStudent([...student,std])
     }
 
 
@@ -44,13 +45,13 @@ let Student = () => {
     return (
         <div>
             <h2>Add New Students</h2>
-            <input type="text" placeholder="Please enter the Name" onChange={one}/><br />
+            <input type="text" placeholder="Please enter the Name" onChange={one} autoSave/><br />
             <br />
-            <input type="text" placeholder="Please enter the Roll number" onChange={two} /><br />
+            <input type="text" placeholder="Please enter the Batch " onChange={two} /><br />
             <br />
-            <input type="text"  placeholder="Pllease ente the Class Name" onChange={three}/><br />
+            <input type="text"  placeholder="Pllease ente the Roll number" onChange={three}/><br />
             <br />
-            <input type="text" placeholder="Please enter the Batch" onChange={four}/>
+            <input type="text" placeholder="Please enter the Class" onChange={four}/>
 <br /><br />
             <button type="button" onClick={ongetData}>Submit</button>
             <br /><br />
