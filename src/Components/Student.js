@@ -25,6 +25,7 @@ let Student = () => {
     }
 
     let ongetData  = () =>{
+        if(kame !="" && katch !="" && mole !=="" && lass !=""){
         let std = {
             name:kame,
             batch:katch,
@@ -33,6 +34,14 @@ let Student = () => {
         }
         
         setStudent([...student,std])
+        setKame("");
+        setKatch("");
+        setLass("");
+        setMole("");
+    }
+    else{
+        alert("Please fill up the input fields")
+    }
     }
 
 
@@ -45,13 +54,13 @@ let Student = () => {
     return (
         <div>
             <h2>Add New Students</h2>
-            <input type="text" placeholder="Please enter the Name" onChange={one} autoSave/><br />
+            <input type="text" value={kame} placeholder="Please enter the Name" onChange={one} autoSave/><br />
             <br />
-            <input type="text" placeholder="Please enter the Batch " onChange={two} /><br />
+            <input type="text" value={katch} placeholder="Please enter the Batch " onChange={two} /><br />
             <br />
-            <input type="text"  placeholder="Pllease ente the Roll number" onChange={three}/><br />
+            <input type="text" value={mole}  placeholder="Pllease ente the Roll number" onChange={three}/><br />
             <br />
-            <input type="text" placeholder="Please enter the Class" onChange={four}/>
+            <input type="text" value={lass} placeholder="Please enter the Class" onChange={four}/>
 <br /><br />
             <button type="button" onClick={ongetData}>Submit</button>
             <br /><br />
