@@ -42,7 +42,20 @@ let Student = () => {
     else{
         alert("Please fill up the input fields")
     }
+    
     }
+
+    let onDelete =(index)=>{
+        let Hewstudent= student.filter((student,i)=>{
+            if(i!==index)
+            return student;
+        })
+        setStudent([...Hewstudent])     
+    }
+    
+    
+    
+
 
 
 
@@ -76,6 +89,7 @@ let Student = () => {
                         <th scope="col">Roll No.</th>
                         <th scope="col">Class</th>
                         <th scope="col">Batch</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </tbody>
 
@@ -88,6 +102,7 @@ let Student = () => {
                                 <td scope="col">{value.roll}</td>
                                 <td scope="col">{value.class}</td>
                                 <td scope="col">{value.batch}</td>
+                                <td scope="col"><button type="button" onClick={()=>onDelete(index)}>Delete</button></td>
                             </tr>
 
 
